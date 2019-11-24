@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/msys64/mingw32/include/**",
+                "C:/msys64/mingw32/i686-w64-mingw32/include/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__cdecl=__attribute__((__cdecl__))"
+            ],
+            "compilerPath": "C:\\msys64\\mingw32\\bin\\gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x86",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**",
+                    "C:/msys64/mingw32/include",
+                    "C:/msys64/mingw32/i686-w64-mingw32/include"
+                ]
+            }
+        }
+    ],
+    "version": 4
+}
