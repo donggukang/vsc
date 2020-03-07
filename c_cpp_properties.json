@@ -1,28 +1,23 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**",
-                "C:/msys64/mingw32/include/**",
-                "C:/msys64/mingw32/i686-w64-mingw32/include/**"
+                "/home/d9/Development/CSL/Common/include/**",
+                "/home/d9/Development/CSL/Common/**"
             ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE",
-                "__cdecl=__attribute__((__cdecl__))"
-            ],
-            "compilerPath": "C:\\msys64\\mingw32\\bin\\gcc.exe",
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x86",
+            "intelliSenseMode": "gcc-x64",
             "browse": {
                 "path": [
-                    "${workspaceFolder}/**",
-                    "C:/msys64/mingw32/include",
-                    "C:/msys64/mingw32/i686-w64-mingw32/include"
-                ]
+                    "/home/d9/Development/CSL/Common/include/**",
+                    "/home/d9/Development/CSL/Common/**"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
             }
         }
     ],

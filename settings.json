@@ -1,39 +1,6 @@
 {
-    "python.pythonPath": "C:\\python\\3.7.3\\python.exe",
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    
-    //"terminal.integrated.shell.windows": "C:\\msys64\\usr\\bin\\bash.exe",
-    //"terminal.integrated.shellArgs.windows": ["--login", "-i"],
-    //"terminal.integrated.env.windows":
-    //{
-    //    "MSYSTEM": "MINGW64",
-    //    "CHERE_INVOKING":"1"
-    //}
-
-    "shellLauncher.shells.windows": [
-        {
-            "shell": "C:\\Windows\\System32\\cmd.exe",
-            "label": "cmd"
-        },
-        {
-            "shell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-            "label": "PowerShell"
-        },
-        {
-            "shell": "C:\\Windows\\System32\\bash.exe",
-            "label": "WSL Bash"
-        },
-        {
-            "shell": "C:\\msys64\\usr\\bin\\bash.exe",
-            "label": "MSYS2",
-            "args": ["--login", "-i"],
-            "env": {
-                "MSYSTEM": "MINGW64",
-                "CHERE_INVOKING": "1",
-                "MSYS2_PATH_TYPE": "inherit"
-            }
-        }
-    ]
-    
+    "files.associations": {
+        "master.h": "c",
+        "ioctl.h": "c"
+    }
 }

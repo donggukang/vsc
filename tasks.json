@@ -1,33 +1,74 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Motion build",
             "type": "shell",
-            "label": "g++ build active file",
-            "command": "C:/msys64/mingw32/bin/g++.exe",
-            "args": [
-                "-std=c++17",
-                "-Wall",
-                "-Wextra",
-                "-g",
-                "${workspaceRoot}/robot_dh.cpp",
-                "-o",
-                "${workspaceRoot}/robot_dh.exe"
-            ],
+            "command": "make",
+            // use options.cwd property if the Makefile is not in the project root ${workspaceRoot} dir
             "options": {
-                "cwd": "C:/msys64/mingw32/bin"
+                "cwd": "${workspaceRoot}"
             },
+            // start the build without prompting for task selection, use "group": "build" otherwise
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            // arg passing example: in this case is executed make QUIET=0
+            "args": ["QUIET=0"],
+             //컴파일시 에러를 편집기에 반영
+            //참고:   https://code.visualstudio.com/docs/editor/tasks#_defining-a-problem-matcher
             "problemMatcher": {
                 "fileLocation": [
-                    "relative",
-                    "${workspaceRoot}"
+                "relative",
+                "${workspaceRoot}"
                 ],
                 "pattern": {
-                    // The regular expression.
-                    //Example to match: helloWorld.c:5:3: warning: implicit declaration of function 'prinft'
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
+                // The regular expression. 
+                //Example to match: helloWorld.c:5:3: warning: implicit declaration of function 'prinft'
+                "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning error):\\s+(.*)$",
+                "file": 1,
+                "line": 2,
+                "column": 3,
+                "severity": 4,
+                "message": 5
+                
+                }
+            }
+        },
+        {
+            "label": "Motion clean",
+            "type": "shell",
+            "command": "make",
+            // use options.cwd property if the Makefile is not in the project root ${workspaceRoot} dir
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            // start the build without prompting for task selection, use "group": "build" otherwise
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            // arg passing example: in this case is executed make QUIET=0
+            "args": ["clean"],
+            // Use the standard less compilation problem matcher.
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["absolute"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
                     "file": 1,
                     "line": 2,
                     "column": 3,
@@ -36,5 +77,5 @@
                 }
             }
         }
-    ],
+    ]
 }
